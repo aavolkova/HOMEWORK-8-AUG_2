@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#"
+      th:action="@{/songform}"
+      th:object="${song}"
+      method="post">
+
+
+
+    Enter Name: <input type="text"  th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}" ></span><br/>
+
+    Enter Artist: <input type="text" th:field="*{artist}" />
+        <span th:if="${#fields.hasErrors('artist')}"
+              th:errors="*{artist}"></span><br/>
+
+    Enter Album: <input type="text" th:field="*{album}" />
+        <span th:if="${#fields.hasErrors('album')}"
+              th:errors="*{album}"></span><br/>
+
+    Enter Rating: <input type="number" th:field="*{rating}" />
+        <span th:if="${#fields.hasErrors('rating')}"
+              th:errors="*{rating}"></span><br/>
+
+    Enter Year: <input type="number" th:field="*{year}" />
+    <span th:if="${#fields.hasErrors('year')}"
+          th:errors="*{year}"></span><br/>
+    <br/>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
